@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Stores
+
+#stores
+  - @stores.each do |store|
+    == render store
+    p
+      = link_to "Show this store", store
+
+= link_to "New store", new_store_path

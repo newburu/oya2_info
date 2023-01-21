@@ -1,0 +1,12 @@
+= simple_form_for(@report) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.association :item
+    = f.input :title
+    = f.input :detail
+    = f.input :bought_at
+
+  .form-actions
+    = f.button :submit

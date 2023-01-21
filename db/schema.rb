@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_21_072512) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_21_080344) do
   create_table "assessments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -66,6 +66,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_072512) do
     t.index ["brand_id"], name: "index_products_on_brand_id"
   end
 
+  create_table "reports", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.string "title"
+    t.text "detail"
+    t.date "bought_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_reports_on_item_id"
+  end
+
   create_table "stores", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -79,4 +89,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_072512) do
   add_foreign_key "product_photos", "photos"
   add_foreign_key "product_photos", "products"
   add_foreign_key "products", "brands"
+  add_foreign_key "reports", "items"
 end

@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_21_044819) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_21_045117) do
   create_table "brands", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "store_id", null: false
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["store_id"], name: "index_brands_on_store_id"
+  end
+
+  create_table "item_photos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "photo_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_item_photos_on_item_id"
+    t.index ["photo_id"], name: "index_item_photos_on_photo_id"
   end
 
   create_table "items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -49,6 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_044819) do
   end
 
   add_foreign_key "brands", "stores"
+  add_foreign_key "item_photos", "items"
+  add_foreign_key "item_photos", "photos"
   add_foreign_key "items", "products"
   add_foreign_key "products", "brands"
 end

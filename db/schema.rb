@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_21_045117) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_21_050210) do
   create_table "brands", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "store_id", null: false
     t.string "name"
@@ -43,6 +43,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_045117) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "product_photos", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "photo_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["photo_id"], name: "index_product_photos_on_photo_id"
+    t.index ["product_id"], name: "index_product_photos_on_product_id"
+  end
+
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "brand_id", null: false
     t.string "name"
@@ -61,5 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_045117) do
   add_foreign_key "item_photos", "items"
   add_foreign_key "item_photos", "photos"
   add_foreign_key "items", "products"
+  add_foreign_key "product_photos", "photos"
+  add_foreign_key "product_photos", "products"
   add_foreign_key "products", "brands"
 end

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: one
+  name: MyString
+  release_at: 2023-01-21
+
+two:
+  product: two
+  name: MyString
+  release_at: 2023-01-21

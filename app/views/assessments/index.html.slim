@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Assessments
+
+#assessments
+  - @assessments.each do |assessment|
+    == render assessment
+    p
+      = link_to "Show this assessment", assessment
+
+= link_to "New assessment", new_assessment_path

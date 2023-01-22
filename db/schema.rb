@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_21_050210) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_22_012037) do
+  create_table "assessments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "brands", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "store_id", null: false
     t.string "name"
@@ -60,6 +66,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_050210) do
     t.index ["brand_id"], name: "index_products_on_brand_id"
   end
 
+  create_table "report_assessments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "report_id", null: false
+    t.bigint "assessment_id", null: false
+    t.integer "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["assessment_id"], name: "index_report_assessments_on_assessment_id"
+    t.index ["report_id"], name: "index_report_assessments_on_report_id"
+  end
+
+  create_table "reports", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.string "title"
+    t.text "detail"
+    t.date "bought_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_reports_on_item_id"
+  end
+
   create_table "stores", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -73,4 +99,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_21_050210) do
   add_foreign_key "product_photos", "photos"
   add_foreign_key "product_photos", "products"
   add_foreign_key "products", "brands"
+  add_foreign_key "report_assessments", "assessments"
+  add_foreign_key "report_assessments", "reports"
+  add_foreign_key "reports", "items"
 end

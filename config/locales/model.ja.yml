@@ -1,0 +1,48 @@
+ja:
+  activerecord:
+    models:
+      # view側： Assessment.model_name.human => "評価" / t("activerecord.models.assessment")と同じ
+      assessment: 評価 
+      brand: ブランド
+      item: 商品
+      photo: 写真
+      product: プロダクト
+      report: クチコミ
+      store: メーカー
+    # model毎に定義したいattributesを記述
+    attributes:
+        assessment:
+          id: ID
+          # view側： Assessment.human_attribute_name :name => "名称" /　t("activerecord.attributes.assessment.name")と同じ
+          name: 名称
+        brand:
+          id: ID
+          store: メーカー
+          name: 名称
+        item:
+          id: ID
+          product: プロダクト
+          name: 商品名
+          release_at: 発売日
+          photos: 写真
+        photo:
+          id: ID
+          image: 画像
+        product:
+          id: ID
+          brand: ブランド
+          name: 名称
+          photos: 写真
+        report:
+          id: ID
+          item: 商品
+          title: タイトル
+          detail: コメント
+          bought_at: 購入日
+        store:
+          id: ID
+          name: 名称
+  # 全てのmodelで共通して使用するattributesを定義
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日

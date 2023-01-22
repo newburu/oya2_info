@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: one
+  title: MyString
+  detail: MyText
+  bought_at: 2023-01-21
+
+two:
+  item: two
+  title: MyString
+  detail: MyText
+  bought_at: 2023-01-21

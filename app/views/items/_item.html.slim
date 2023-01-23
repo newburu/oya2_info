@@ -8,3 +8,7 @@ div id="#{dom_id item}"
   p
     strong Release at:
     =< item.release_at
+  p
+    strong Image:
+    - item.images.each do |image|
+      =< image_tag image.thumb.url

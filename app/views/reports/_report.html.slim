@@ -11,3 +11,7 @@ div id="#{dom_id report}"
   p
     strong Bought at:
     =< report.bought_at
+  p
+    strong Image:
+    - report.images.each do |image|
+      =< image_tag image.thumb.url

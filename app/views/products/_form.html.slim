@@ -5,7 +5,7 @@
   .form-inputs
     = f.association :brand
     = f.input :name
-    = f.association :photos
+    = f.file_field :images, multiple: true
 
   .form-actions
     = f.button :submit

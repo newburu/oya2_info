@@ -84,3 +84,6 @@ end
 # 画像アップロード
 gem 'carrierwave'
 gem "mini_magick"
+
+# 初期データ
+gem 'seed-fu'

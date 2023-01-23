@@ -65,6 +65,6 @@ class ReportsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def report_params
-      params.require(:report).permit(:item_id, :title, :detail, :bought_at)
+      params.require(:report).permit(:item_id, :title, :detail, :bought_at, {images: []})
     end
 end

@@ -73,7 +73,6 @@ end
 
 gem "slim-rails"
 gem "simple_form"
-gem "cssbundling-rails"
 
 # i18n
 gem 'rails-i18n'
@@ -84,3 +83,7 @@ end
 # 画像アップロード
 gem 'carrierwave'
 gem "mini_magick"
+
+# CSS
+gem 'cssbundling-rails'
+gem 'jsbundling-rails'

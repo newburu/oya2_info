@@ -1,0 +1,27 @@
+header
+  .navbar.bg-base-100
+    .flex-1
+      a.btnbtn-ghost.normal-case.text-xl
+        | daisyUI
+    .flex-none
+      ul.menu.menu-horizontal.px-1
+        li
+          a
+            | Item 1
+        li tabindex="0"
+          a
+            | Parent
+          ul.p-2.bg-base-100
+            li
+              = link_to "Stores", stores_path, class: "link link-hover"
+            li
+              = link_to "Brands", brands_path, class: "link link-hover"
+            li
+              = link_to "Products", products_path, class: "link link-hover"
+            li
+              = link_to "Item", items_path, class: "link link-hover"
+            li
+              = link_to "Reports", reports_path, class: "link link-hover"
+        li
+          a
+            | Item 3

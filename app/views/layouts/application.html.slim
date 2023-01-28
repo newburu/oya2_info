@@ -10,27 +10,6 @@ html
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
     = javascript_importmap_tags
   body.container
-    .navbar.bg-base-100
-      .flex-1
-        a.btnbtn-ghost.normal-case.text-xl
-          | daisyUI
-      .flex-none
-        ul.menu.menu-horizontal.px-1
-          li
-            a
-              | Item 1
-          li tabindex="0"
-            a
-              | Parent
-            ul.p-2.bg-base-100
-              li
-                a
-                  | Submenu 1
-              li
-                a
-                  | Submenu 2
-          li
-            a
-              | Item 3
+    = render 'layouts/header'
     = yield
     = render 'layouts/footer'

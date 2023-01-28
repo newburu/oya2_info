@@ -73,7 +73,6 @@ end
 
 gem "slim-rails"
 gem "simple_form"
-gem "cssbundling-rails"
 
 # i18n
 gem 'rails-i18n'
@@ -87,3 +86,7 @@ gem "mini_magick"
 
 # 初期データ
 gem 'seed-fu'
+
+# CSS
+gem 'cssbundling-rails'
+gem 'jsbundling-rails'

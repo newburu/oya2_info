@@ -3,14 +3,15 @@ crumb :root do
 end
 
 crumb :stores do
-  link "メーカー", stores_path
+  link t("breadcrumbs.store"), stores_path
 end
 crumb :store do |store|
   link store.name, store_path(store)
 end
 
 crumb :brands do
-  link "ブランド", brands_path
+  link t("breadcrumbs.brand"), brands_path
+  parent :stores
 end
 crumb :brand do |brand|
   link brand.name, brand_path(brand)
@@ -18,7 +19,8 @@ crumb :brand do |brand|
 end
 
 crumb :products do
-  link "プロダクト", products_path
+  link t("breadcrumbs.product"), products_path
+  parent :brands
 end
 crumb :product do |product|
   link product.name, product_path(product)
@@ -26,7 +28,8 @@ crumb :product do |product|
 end
 
 crumb :items do
-  link "商品", items_path
+  link t("breadcrumbs.item"), items_path
+  parent :products
 end
 crumb :item do |item|
   link item.name, item_path(item)
@@ -34,7 +37,8 @@ crumb :item do |item|
 end
 
 crumb :reports do
-  link "クチコミ", reports_path
+  link t("breadcrumbs.report"), reports_path
+  parent :items
 end
 crumb :report do |report|
   link report.title, report_path(report)

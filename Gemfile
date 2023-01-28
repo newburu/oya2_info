@@ -84,6 +84,9 @@ end
 gem 'carrierwave'
 gem "mini_magick"
 
+# 初期データ
+gem 'seed-fu'
+
 # CSS
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'

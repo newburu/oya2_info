@@ -1,5 +1,25 @@
-Item.seed do |s|
-  s.id = 1
-  s.product_id = 1
-  s.name = '商品A'
-end
+Item.seed(:id,
+  { id: 1, product_id: 1, name: '商品A-1-1-1' },
+  { id: 2, product_id: 1, name: '商品A-1-1-2' },
+  { id: 3, product_id: 1, name: '商品A-1-1-3' },
+  { id: 4, product_id: 1, name: '商品A-1-1-4' },
+  { id: 5, product_id: 1, name: '商品A-1-1-5' },
+  { id: 6, product_id: 1, name: '商品A-1-1-6' },
+  { id: 7, product_id: 1, name: '商品A-1-1-7' },
+  { id: 8, product_id: 1, name: '商品A-1-1-8' },
+  { id: 9, product_id: 1, name: '商品A-1-1-9' },
+  { id: 10, product_id: 2, name: '商品A-1-2-1' },
+  { id: 11, product_id: 2, name: '商品A-1-2-2' },
+  { id: 12, product_id: 3, name: '商品A-2-1-1' },
+  { id: 13, product_id: 3, name: '商品A-2-1-2' },
+  { id: 14, product_id: 4, name: '商品A-2-2-1' },
+  { id: 15, product_id: 4, name: '商品A-2-2-2' },
+  { id: 16, product_id: 5, name: '商品B-1-1-1' },
+  { id: 17, product_id: 5, name: '商品B-1-1-2' },
+  { id: 18, product_id: 6, name: '商品B-1-2-1' },
+  { id: 19, product_id: 6, name: '商品B-1-2-2' },
+  { id: 20, product_id: 7, name: '商品B-2-1-1' },
+  { id: 21, product_id: 7, name: '商品B-2-1-2' },
+  { id: 22, product_id: 8, name: '商品B-2-2-1' },
+  { id: 23, product_id: 8, name: '商品B-2-2-2' },
+)

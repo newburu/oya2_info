@@ -1,5 +1,10 @@
-Product.seed do |s|
-  s.id = 1
-  s.brand_id = 1
-  s.name = 'プロダクトA'
-end
+Product.seed(:id,
+  { id: 1, brand_id: 1, name: 'プロダクトA-1-1' },
+  { id: 2, brand_id: 1, name: 'プロダクトA-1-2' },
+  { id: 3, brand_id: 2, name: 'プロダクトA-2-1' },
+  { id: 4, brand_id: 2, name: 'プロダクトA-2-2' },
+  { id: 5, brand_id: 3, name: 'プロダクトB-1-1' },
+  { id: 6, brand_id: 3, name: 'プロダクトB-1-2' },
+  { id: 7, brand_id: 4, name: 'プロダクトB-2-1' },
+  { id: 8, brand_id: 4, name: 'プロダクトB-2-2' },
+)

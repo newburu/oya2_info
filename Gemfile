@@ -90,3 +90,6 @@ gem 'seed-fu'
 # CSS
 gem 'cssbundling-rails'
 gem 'jsbundling-rails'
+
+# パンくずリスト
+gem 'gretel'

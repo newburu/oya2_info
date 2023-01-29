@@ -1,5 +1,5 @@
 doctype html
-html
+html data-theme="cupcake"
   head
     meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
     title Mogunavi
@@ -9,5 +9,7 @@ html
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
     = javascript_importmap_tags
-  body.container
+  body.container.mx-auto
+    = render 'layouts/header'
     = yield
+    = render 'layouts/footer'

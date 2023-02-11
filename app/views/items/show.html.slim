@@ -4,6 +4,8 @@ p style="color: green" = notice
 
 == render @item
 
+== render partial: 'shared/child_list', locals: { children: @item.reports }
+
 div
   => link_to "Edit this item", edit_item_path(@item)
   '|

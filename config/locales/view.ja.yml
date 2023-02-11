@@ -1,24 +1,32 @@
 ja:
   stores:
+    index:
+      btn:
+        new: メーカーを追加する
+        show: このメーカーを見る
     show:
       btn:
         edit: このメーカーを編集する
         destroy: このメーカーを削除する
+        new-brand: このメーカーのブランドを追加する
   brands:
     show:
       btn:
         edit: このブランドを編集する
         destroy: このブランドを削除する
+        new-product: このブランドのプロダクトを追加する
   products:
     show:
       btn:
         edit: このプロダクトを編集する
         destroy: このプロダクトを削除する
+        new-item: このブランドの商品を追加する
   items:
     show:
       btn:
         edit: この商品を編集する
         destroy: この商品を削除する
+        new-report: この商品のクチコミを追加する
   reports:
     show:
       btn:

@@ -9,4 +9,6 @@ p style="color: green" = notice
 div
   => link_to t('.btn.edit'), edit_store_path(@store)
 
-  = button_to t('.btn.destroy'), @store, method: :delete
+  => button_to t('.btn.destroy'), @store, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }
+
+  => link_to t('.btn.new-brand'), new_brand_path(store: @store)

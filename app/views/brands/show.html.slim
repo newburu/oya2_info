@@ -7,8 +7,6 @@ p style="color: green" = notice
 == render partial: 'shared/child_list', locals: { children: @brand.products }
 
 div
-  => link_to "Edit this brand", edit_brand_path(@brand)
-  '|
-  =< link_to "Back to brands", brands_path
+  => link_to t('.btn.edit'), edit_brand_path(@brand)
 
-  = button_to "Destroy this brand", @brand, method: :delete
+  = button_to t('.btn.destroy'), @brand, method: :delete

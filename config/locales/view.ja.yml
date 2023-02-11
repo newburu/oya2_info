@@ -1,0 +1,26 @@
+ja:
+  stores:
+    show:
+      btn:
+        edit: このメーカーを編集する
+        destroy: このメーカーを削除する
+  brands:
+    show:
+      btn:
+        edit: このブランドを編集する
+        destroy: このブランドを削除する
+  products:
+    show:
+      btn:
+        edit: このプロダクトを編集する
+        destroy: このプロダクトを削除する
+  items:
+    show:
+      btn:
+        edit: この商品を編集する
+        destroy: この商品を削除する
+  reports:
+    show:
+      btn:
+        edit: このクチコミを編集する
+        destroy: このクチコミを削除する

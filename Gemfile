@@ -93,3 +93,6 @@ gem 'jsbundling-rails'
 
 # パンくずリスト
 gem 'gretel'
+
+# 設定
+gem 'config'

@@ -1,4 +1,15 @@
 ja:
+  menu:
+    list: サービス
+    store: メーカー
+    brand: ブランド
+    product: プロダクト
+    item: 商品
+    report: クチコミ
+    static_pages:
+      info: このサイトについて
+      privacy: プライバシーポリシー
+      terms: 利用規約
   stores:
     index:
       btn:

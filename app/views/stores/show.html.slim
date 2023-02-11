@@ -7,8 +7,8 @@ p style="color: green" = notice
 == render partial: 'shared/child_list', locals: { children: @store.brands }
 
 div
-  => link_to "Edit this store", edit_store_path(@store)
-  '|
-  =< link_to "Back to stores", stores_path
+  => link_to t('.btn.edit'), edit_store_path(@store)
 
-  = button_to "Destroy this store", @store, method: :delete
+  => button_to t('.btn.destroy'), @store, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }
+
+  => link_to t('.btn.new-brand'), new_brand_path(store: @store)

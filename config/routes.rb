@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   resources :stores
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  # 静的ページ
+  get 'static_pages/info'
+  get 'static_pages/terms'
+  get 'static_pages/privacy'
+
   # Defines the root path route ("/")
   root "stores#index"
 end

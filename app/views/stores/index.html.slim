@@ -8,6 +8,6 @@ h1 Stores
   - @stores.each do |store|
     == render store
     p
-      = link_to "Show this store", store
+      = link_to t('.btn.show'), store
 
-= link_to "New store", new_store_path
+= link_to t('.btn.new'), new_store_path

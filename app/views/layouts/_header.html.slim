@@ -1,30 +1,29 @@
 header
   .navbar.bg-base-100
     .flex-1
-      a.btnbtn-ghost.normal-case.text-xl
-        | daisyUI
+      = link_to Settings.system[:title], root_path, class: "btnbtn-ghost normal-case text-xl"
     .flex-none
       ul.menu.menu-horizontal.px-1
         li
-          a
-            | Item 1
+          = link_to t('menu.static_pages.info'), static_pages_info_path, class: "link link-hover"
         li tabindex="0"
           a
-            | Parent
+            = t('menu.list')
           ul.p-2.bg-base-100
             li
-              = link_to "Stores", stores_path, class: "link link-hover"
+              = link_to t('menu.store'), stores_path, class: "link link-hover"
             li
-              = link_to "Brands", brands_path, class: "link link-hover"
+              = link_to t('menu.brand'), brands_path, class: "link link-hover"
             li
-              = link_to "Products", products_path, class: "link link-hover"
+              = link_to t('menu.product'), products_path, class: "link link-hover"
             li
-              = link_to "Item", items_path, class: "link link-hover"
+              = link_to t('menu.item'), items_path, class: "link link-hover"
             li
-              = link_to "Reports", reports_path, class: "link link-hover"
+              = link_to t('menu.report'), reports_path, class: "link link-hover"
         li
-          a
-            | Item 3
+          = link_to t('menu.static_pages.privacy'), static_pages_privacy_path, class: "link link-hover"
+        li
+          = link_to t('menu.static_pages.terms'), static_pages_terms_path, class: "link link-hover"
   
   .text-sm.breadcrumbs
     = breadcrumbs class: nil, style: :ul

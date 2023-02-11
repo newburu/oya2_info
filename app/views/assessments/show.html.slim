@@ -5,8 +5,6 @@ p style="color: green" = notice
 == render @assessment
 
 div
-  => link_to "Edit this assessment", edit_assessment_path(@assessment)
-  '|
-  =< link_to "Back to assessments", assessments_path
+  => link_to t('.btn.edit'), edit_assessment_path(@assessment)
 
-  = button_to "Destroy this assessment", @assessment, method: :delete
+  = button_to t('.btn.destroy'), @assessment, method: :delete

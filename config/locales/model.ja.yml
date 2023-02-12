@@ -24,21 +24,19 @@ ja:
           product: プロダクト
           name: 商品名
           release_at: 発売日
-          photos: 写真
-        photo:
-          id: ID
-          image: 画像
+          images: 写真
         product:
           id: ID
           brand: ブランド
           name: 名称
-          photos: 写真
+          images: 写真
         report:
           id: ID
           item: 商品
           title: タイトル
           detail: コメント
           bought_at: 購入日
+          images: 写真
         store:
           id: ID
           name: 名称

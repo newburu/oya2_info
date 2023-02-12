@@ -12,6 +12,7 @@ ja:
       terms: 利用規約
   stores:
     index:
+      title: メーカー
       btn:
         new: メーカーを追加する
         show: このメーカーを見る

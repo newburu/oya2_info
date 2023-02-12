@@ -1,14 +1,18 @@
 div id="#{dom_id item}"
   p
-    strong Product:
+    strong
+      = t('activerecord.attributes.item.product')
     =< item.product_id
   p
-    strong Name:
+    strong
+      = t('activerecord.attributes.item.name')
     =< item.name
   p
-    strong Release at:
+    strong
+      = t('activerecord.attributes.item.release_at')
     =< item.release_at
   p
-    strong Image:
+    strong
+      = t('activerecord.attributes.item.images')
     - item.images.each do |image|
       =< image_tag image.thumb.url

@@ -1,7 +1,9 @@
 div id="#{dom_id brand}"
   p
-    strong Store:
+    strong
+      = t('activerecord.attributes.brand.store')
     =< brand.store_id
   p
-    strong Name:
+    strong
+      = t('activerecord.attributes.brand.name')
     =< brand.name

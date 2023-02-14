@@ -5,6 +5,6 @@ p style="color: green" = notice
 == render @report
 
 div
-  => link_to t('.btn.edit'), edit_report_path(@report)
-
-  = button_to t('.btn.destroy'), @report, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }
+  - if @report.owner == current_user
+    => link_to t('.btn.edit'), edit_report_path(@report)
+    = button_to t('.btn.destroy'), @report, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }

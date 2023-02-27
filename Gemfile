@@ -113,7 +113,7 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
+  gem 'capistrano3-puma'
   gem 'ed25519' 
   gem 'bcrypt_pbkdf'
 end

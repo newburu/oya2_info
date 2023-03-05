@@ -18,7 +18,6 @@ set :rbenv_type, :user
 set :rbenv_ruby, '3.2.0'
 
 # Pumaを再起動するための記述
-#after 'puma:restart', 'deploy:sitemap'
 namespace :deploy do
   desc "Make sure local git is in sync with remote."
   task :confirm do
@@ -46,15 +45,6 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       invoke  'puma:stop'
       invoke! 'puma:start'
-    end
-  end
-
-  desc 'Generate sitemap'
-  task :sitemap do
-    on roles(:app) do
-      within release_path do
-        execute :bundle, :exec, :rake, 'sitemap:create RAILS_ENV=production'
-      end
     end
   end
 

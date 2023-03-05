@@ -1,3 +1,5 @@
+set :application, ENV['PRODUCTION_DEPLOY_APP_NAME']
+
 server ENV['PRODUCTION_SERVER_IP'], user: ENV['PRODUCTION_SERVER_USER'], roles: %w{app db web}, port: ENV['PRODUCTION_SERVER_PORT'] 
 
 set :ssh_options, {
@@ -10,6 +12,7 @@ set :deploy_to, "/home/#{ENV['PRODUCTION_SERVER_USER']}/#{ENV['PRODUCTION_DEPLOY
 set :deploy_via, :remote_cache
 
 # Pumaの設定
+set :puma_user,       "#{ENV['PRODUCTION_SERVER_USER']}"
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
 set :puma_bind,       "unix://#{shared_path}/tmp/sockets/#{fetch(:application)}-puma.sock"

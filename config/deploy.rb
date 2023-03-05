@@ -1,3 +1,5 @@
+set :pty, true
+
 # cloneするgitのレポジトリ
 set :repo_url, ENV['DEPLOY_GIT_URL']
 

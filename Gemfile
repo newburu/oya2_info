@@ -115,4 +115,5 @@ group :development do
   gem 'capistrano3-puma'
   gem 'ed25519' 
   gem 'bcrypt_pbkdf'
+  gem 'sshkit-sudo'
 end

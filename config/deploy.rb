@@ -1,3 +1,5 @@
+set :pty, true
+
 # cloneするgitのレポジトリ
 set :repo_url, ENV['DEPLOY_GIT_URL']
 
@@ -17,17 +19,36 @@ set :keep_releases, 5
 set :rbenv_type, :user
 set :rbenv_ruby, '3.2.0'
 
-# ここからUnicornの設定
-# Unicornのプロセスの指定
-set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
-
-# Unicornの設定ファイルの指定
-set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
-
-# Unicornを再起動するための記述
-after 'deploy:publishing', 'deploy:restart'
+# Pumaを再起動するための記述
 namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
+  desc "Make sure local git is in sync with remote."
+  task :confirm do
+    on roles(:app) do
+      puts "This stage is '#{fetch(:stage)}'. Deploying branch is '#{fetch(:branch)}'."
+      puts 'Are you sure? [y/n]'
+      ask :answer, 'n'
+      if fetch(:answer) != 'y'
+        puts 'deploy stopped'
+        exit
+      end
+    end
   end
+
+  desc "Initial Deploy"
+  task :initial do
+    on roles(:app) do
+      before 'deploy:restart', 'puma:start'
+      invoke 'deploy'
+    end
+  end
+
+  desc "Restart Application"
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      invoke  'puma:stop'
+      invoke! 'puma:start'
+    end
+  end
+
+  before :starting, :confirm
 end

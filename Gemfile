@@ -89,7 +89,6 @@ gem 'seed-fu'
 
 # CSS
 gem 'cssbundling-rails'
-gem 'jsbundling-rails'
 
 # パンくずリスト
 gem 'gretel'
@@ -113,7 +112,8 @@ group :development do
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
+  gem 'capistrano3-puma'
   gem 'ed25519' 
   gem 'bcrypt_pbkdf'
+  gem 'sshkit-sudo'
 end

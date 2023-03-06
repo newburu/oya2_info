@@ -53,3 +53,4 @@ production:
   database: mogunavi_production
   username: mogunavi
   password: <%= ENV["MOGUNAVI_DATABASE_PASSWORD"] %>
+  socket: <%= ENV["MOGUNAVI_DATABASE_SOCK_PATH"] %>

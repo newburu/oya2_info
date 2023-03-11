@@ -29,7 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_134026) do
     t.bigint "product_id", null: false
     t.string "name"
     t.date "release_at"
-    t.string "images"
+    t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_items_on_product_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_134026) do
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "brand_id", null: false
     t.string "name"
-    t.string "images"
+    t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_products_on_brand_id"
@@ -60,7 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_134026) do
     t.string "title"
     t.text "detail"
     t.date "bought_at"
-    t.string "images"
+    t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_reports_on_item_id"

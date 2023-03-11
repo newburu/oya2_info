@@ -5,7 +5,7 @@ class CreateReports < ActiveRecord::Migration[7.0]
       t.string :title
       t.text :detail
       t.date :bought_at
-      t.string :images
+      t.json :images
 
       t.timestamps
     end

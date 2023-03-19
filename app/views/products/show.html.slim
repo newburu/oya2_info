@@ -1,3 +1,6 @@
+- set_meta_tags title: "#{@product.name}", og: {title: "#{Settings.system[:title]}：「#{@product.name}」"}
+- set_meta_tags og: {image: image_url(@product.images[0])} if @product.images.present?
+
 - breadcrumb :product, @product
 
 p style="color: green" = notice

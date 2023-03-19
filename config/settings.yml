@@ -1,6 +1,6 @@
 system:
   title: 'もぐもぐ'
-  url: 'https://imakoko-alert.com/'
+  url: 'https://mogumogu.com/'
   bbs_url: 
   trello_url: 
   google_form_url: 
@@ -8,6 +8,7 @@ system:
   description: 'みんなのもぐもぐを投稿しよう！'
   description_smartphone: 'もぐもぐ！！'
   hashtag: 'もぐもぐ'
+  keywords: ['Twitter', 'おやつ', 'もぐもぐ']
   twitter_site: newburu
   twitter:
     url: 'https://twitter.com/'

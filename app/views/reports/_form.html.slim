@@ -3,8 +3,12 @@
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
   .form-inputs
-    = f.association :item
+    = f.association :item, as: :hidden
     = f.input :title
+    = f.simple_fields_for :report_assessments do |report_assessment|
+      = report_assessment.input :report_id, as: :hidden
+      = report_assessment.input :assessment_id, as: :hidden
+      = report_assessment.input :value, label: report_assessment.object.assessment.name
     = f.input :detail
     = f.input :bought_at
     = f.file_field :images, multiple: true

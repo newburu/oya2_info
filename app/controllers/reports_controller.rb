@@ -12,7 +12,10 @@ class ReportsController < ApplicationController
 
   # GET /reports/new
   def new
-    @report = Report.new
+    @report = Report.new(item_id: params[:item])
+    Assessment.all.each do |assessment|
+      @report.report_assessments.build(report: @report, assessment: assessment)
+    end
   end
 
   # GET /reports/1/edit
@@ -24,6 +27,9 @@ class ReportsController < ApplicationController
     @report = Report.new(report_params)
     @report.owner = current_user
 
+    p "create=============="
+    p @report.validate
+    p @report.errors
     respond_to do |format|
       if @report.save
         format.html { redirect_to report_url(@report), notice: "Report was successfully created." }
@@ -66,6 +72,6 @@ class ReportsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def report_params
-      params.require(:report).permit(:item_id, :title, :detail, :bought_at, {images: []})
+      params.require(:report).permit(:item_id, :title, :detail, :bought_at, {images: []}, report_assessments_attributes: [:id, :report_id, :assessment_id, :value])
     end
 end

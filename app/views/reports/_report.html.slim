@@ -6,6 +6,9 @@ div id="#{dom_id report}"
   h3
     =< report.title
   p
+    - report.report_assessments.each do |ra|
+      =< "#{ra.assessment.name}:#{ra.value}"
+  p
     =< report.detail
   p
     - report.images.each do |image|

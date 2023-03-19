@@ -106,6 +106,9 @@ gem "omniauth-rails_csrf_protection"
 # 環境変数
 gem 'dotenv-rails'
 
+# SEO
+gem 'meta-tags'
+
 # 自動デプロイ
 group :development do
   gem 'capistrano'

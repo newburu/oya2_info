@@ -2,8 +2,8 @@ doctype html
 html data-theme="cupcake"
   head
     meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
-    title Mogunavi
     meta content="width=device-width,initial-scale=1" name="viewport"
+    = display_meta_tags(default_meta_tags)
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"

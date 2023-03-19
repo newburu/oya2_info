@@ -4,10 +4,6 @@ p style="color: green" = notice
 
 h1 = t('.title')
 
-#stores
-  - @stores.each do |store|
-    == render store
-    p
-      = link_to t('.btn.show'), store
+== render partial: 'shared/child_list', locals: { children: @stores }
 
 = link_to t('.btn.new'), new_store_path

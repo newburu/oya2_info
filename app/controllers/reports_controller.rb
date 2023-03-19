@@ -27,9 +27,6 @@ class ReportsController < ApplicationController
     @report = Report.new(report_params)
     @report.owner = current_user
 
-    p "create=============="
-    p @report.validate
-    p @report.errors
     respond_to do |format|
       if @report.save
         format.html { redirect_to report_url(@report), notice: "Report was successfully created." }

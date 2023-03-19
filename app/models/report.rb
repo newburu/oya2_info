@@ -8,7 +8,13 @@ class Report < ApplicationRecord
   serialize :images
   belongs_to :owner, class_name: 'User', foreign_key: :owner_id
 
+  # child_listで利用するためにAlias
   def name
     title
+  end
+
+  # TITLEタグ用のAlias
+  def title_tag
+    "#{self.item.name}:#{self.title}"
   end
 end

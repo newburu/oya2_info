@@ -1,9 +1,1 @@
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=<%= ENV["ADSENSE_ID"] %>"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '<%= ENV["ADSENSE_ID"] %>');
-</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%= ENV["ADSENSE_ID"] %>" crossorigin="anonymous"></script>

@@ -1,0 +1,29 @@
+- breadcrumb :root
+
+- if @new_reports.present?
+  .new-reports
+    h1 新着クチコミ
+    ul
+      - @new_reports.each do |report|
+        li.p-2
+          .flex.flex-row.p-1
+          .flex.flex-row.p-1
+            .indicator
+              span.indicator-item
+                = image_tag "icon/new.gif" if report.new?
+              - if report.images[0].present?
+                = image_tag report.images[0].thumb.url, class: "rounded-lg", size: '64x64'
+              - else
+                = image_tag "default.png", class: "rounded-lg", size: '64x64'
+            .title.p-1.pl-2
+              .flex.flex-col
+                = link_to report.item.name, report.item, class: "link link-primary align-bottom"
+                = link_to report.title, report, class: "link link-secondary align-bottom"
+          .flex.flex-row.p-1
+            = report.detail
+          .fiel.flex-row.p-1
+            .flex.flex-col
+              .report-owner.text-xs	
+                = "投稿者：#{report.owner.name}さん"
+              .report-created.text-xs	
+                = "投稿日：#{report.created_at.to_s(:datetime)}"

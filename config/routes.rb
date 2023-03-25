@@ -21,5 +21,8 @@ Rails.application.routes.draw do
   get 'static_pages/privacy'
 
   # Defines the root path route ("/")
-  root "stores#index"
+  root 'portals#index'
+
+  get '/portals', to: 'portals#index'
+
 end

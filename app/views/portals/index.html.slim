@@ -18,7 +18,12 @@
             .title.p-1.pl-2
               .flex.flex-col
                 = link_to report.item.name, report.item, class: "link link-primary align-bottom"
-                = link_to report.title, report, class: "link link-secondary align-bottom"
+                .flex.flex-row.p-1
+                  = link_to report.title, report, class: "link link-secondary align-bottom"
+                  - if report.report_assessments[0].present?
+                    .rating
+                      - 5.times do |idx|
+                        = radio_button_tag :rating, idx, (idx+1 == report.report_assessments[0].value), {disabled: true, class: "mask mask-star-2 bg-orange-400"}
           .flex.flex-row.p-1
             = report.detail
           .fiel.flex-row.p-1

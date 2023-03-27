@@ -2,7 +2,8 @@
 
 - if @new_reports.present?
   .new-reports
-    h1 新着クチコミ
+    h1.text-lg.font-extrabold
+      | 新着クチコミ
     ul
       - @new_reports.each do |report|
         li.p-2

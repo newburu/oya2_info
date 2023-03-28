@@ -2,16 +2,16 @@
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-  .form-inputs
+  .form-inputs.flex.flex-col
     = f.association :item, as: :hidden
-    = f.input :title
+    = f.input :title, input_html: {class: "input input-bordered rounded-md max-w-x"}
     = f.simple_fields_for :report_assessments do |report_assessment|
       = report_assessment.input :report_id, as: :hidden
       = report_assessment.input :assessment_id, as: :hidden
-      = report_assessment.input :value, label: report_assessment.object.assessment.name
-    = f.input :detail
-    = f.input :bought_at
-    = f.file_field :images, multiple: true
+      = report_assessment.input :value, label: report_assessment.object.assessment.name, input_html: {class: "input input-bordered rounded-md max-w-x"}
+    = f.input :detail, input_html: {rows: 5, class: "textarea w-full	textarea-bordered rounded-md min-h-full"}
+    = f.input :bought_at, input_html: {class: "select select-bordered rounded-md max-w-xs"}
+    = f.file_field :images, multiple: true, class: "file-input file-input-bordered rounded-md max-w-xs"
 
   .form-actions
     = f.button :submit

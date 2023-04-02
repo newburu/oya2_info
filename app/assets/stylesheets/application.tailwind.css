@@ -36,3 +36,13 @@ h1:before {
 .input {
     height: auto;
 }
+
+img.thumb {
+    width: 4rem;
+    height: 4rem;
+}
+
+img.thumb-lg {
+    width: 8rem;
+    height: 8rem;
+}

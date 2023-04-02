@@ -1,19 +1,35 @@
 div id="#{dom_id report}"
-  h2
-    =< report.item.name
-  h2
-    =< report.owner.name
-  h3
-    =< report.title
-  p
-    - report.report_assessments.each do |ra|
-      =< "#{ra.assessment.name}:#{ra.value}"
-  p
-    =< report.detail
-  p
-    - report.images.each do |image|
-      =< image_tag image.thumb.url, class: "img-thumbnail"
-  p
-    strong
-      = t('activerecord.attributes.report.bought_at')
-    =< report.bought_at
+  .flex.flex-row.p-1
+    - if report.item.images[0].present?
+      = image_tag report.item.images[0].thumb.url, class: "rounded-lg thumb"
+    - else
+      = image_tag "default.png", class: "rounded-lg thumb"
+    .title.p-1.pl-2
+      .flex.flex-col
+        = link_to report.item.name, report.item, class: "link link-primary align-bottom"
+        .flex.flex-row.p-1
+          = link_to report.title, report, class: "link link-secondary align-bottom"
+  .flex.flex-row.p-1
+    .report_assessment.p-1.pl-2
+      - report.report_assessments.each do |report_assessment|
+        .columns-2.p-1
+          .flex-col
+            = report_assessment.assessment.name
+          .flex-col
+            .rating
+              - 5.times do |idx|
+                = radio_button_tag :rating, idx, (idx+1 == report_assessment.value), {disabled: true, class: "mask mask-star-2 bg-orange-400"}
+    .image.p-1
+      .flex.flex-row
+        - report.images.each do |image|
+          = image_tag image.thumb.url, class: "rounded-lg thumb"
+  .flex.flex-row.p-1.w-full
+    = simple_format(report.detail)
+  .fiel.flex-row.p-1
+    .flex.flex-col
+      .report-owner.text-xs
+        = "投稿者：#{report.owner.name}さん"
+      .report-bought_at.text-xs
+        = "購入日：#{report.bought_at.to_s(:date)}"
+      .report-created.text-xs
+        = "投稿日：#{report.created_at.to_s(:datetime)}"

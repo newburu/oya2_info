@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     :omniauth_callbacks => 'users/omniauth_callbacks',
   }
   
-  resources :reports
+  resources :reports do
+    resources :images, :only => [:create, :destroy] # support #create and #destroy
+  end
   resources :assessments
   resources :items
   resources :products

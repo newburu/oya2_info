@@ -7,7 +7,9 @@ p style="color: green" = notice
 
 == render @report
 
-div
+.flex.flex-row.p-2
   - if @report.owner == current_user
-    => link_to t('.btn.edit'), edit_report_path(@report)
-    = button_to t('.btn.destroy'), @report, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }
+    .p-1
+      = link_to t('btn.edit'), edit_report_path(@report), class: "btn btn-primary rounded-md"
+    .p-1
+      = button_to t('btn.destroy'), @report, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }, class: "btn btn-warning rounded-md"

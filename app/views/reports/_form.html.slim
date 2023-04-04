@@ -13,10 +13,19 @@
         br
         .rating
           - 5.times do |idx|
-            = radio_button_tag "report[report_assessments_attributes][#{report_assessment.options[:child_index]}][value]", idx, (idx+1 == report_assessment.object.value), {class: "mask mask-star-2 bg-orange-400"}
+            = radio_button_tag "report[report_assessments_attributes][#{report_assessment.options[:child_index]}][value]", idx+1, (idx+1 == report_assessment.object.value), {class: "mask mask-star-2 bg-orange-400"}
     = f.input :detail, input_html: {rows: 5, class: "textarea w-full textarea-bordered rounded-md min-h-full"}
     = f.input :bought_at, input_html: {class: "select select-bordered rounded-md max-w-xs"}
+    - @report.images.each_with_index do |image, idx|
+      .flex.flex-row
+        = hidden_field :report, :images, multiple: true, value: image.identifier
+        = image_tag image.thumb.url, class: "rounded-lg thumb"
+        .p-2.w-4.h-4
+          = link_to t('btn.destroy'), report_image_path(@report, idx), data: { turbo_method: :delete, turbo_confirm: t('confirm.destroy') }, class: "btn btn-warning rounded-md"
     = f.file_field :images, multiple: true, class: "file-input file-input-bordered rounded-md max-w-xs"
 
-  .form-actions
-    = f.button :submit
+  .form-actions.flex.flex-row.p-2
+    .p-1
+      = f.button :submit, class: "btn btn-primary rounded-md"
+    .p-1
+      = link_to t('btn.back'), @report, class: "btn btn-secondary rounded-md"

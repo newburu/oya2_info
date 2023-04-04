@@ -44,3 +44,6 @@ ja:
       btn:
         edit: このクチコミを編集する
         destroy: このクチコミを削除する
+    form:
+      btn:
+        destroy: 削除

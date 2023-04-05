@@ -12,7 +12,8 @@ html data-theme="cupcake"
     script src="https://kit.fontawesome.com/#{ENV["FONTAWESOME_ID"]}.js" crossorigin="anonymous"
     = render 'shared/adsense'
     = render 'shared/analytics'
-  body.container.mx-auto
+  body.container.mx-auto.px-4
     = render 'layouts/header'
-    = yield
+    main
+      = yield
     = render 'layouts/footer'

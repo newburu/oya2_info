@@ -5,7 +5,7 @@
   .form-inputs
     = f.association :product
     = f.input :name
-    = f.input :release_at
+    = f.input :release_at, as: :date, html5: true
     = f.file_field :images, multiple: true
 
   .form-actions

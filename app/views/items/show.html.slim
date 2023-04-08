@@ -9,9 +9,8 @@ p style="color: green" = notice
 
 == render partial: 'shared/child_list', locals: { children: @item.reports }
 
-div
-  => link_to t('.btn.edit'), edit_item_path(@item)
-
-  = button_to t('.btn.destroy'), @item, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }
-
-  => link_to t('.btn.new-report'), new_report_path(item: @item)
+.flex.flex-row.p-2
+  .p-1
+    = link_to t('btn.edit'), edit_item_path(@item), class: "btn btn-primary rounded-md"
+  .p-1
+    = button_to t('btn.destroy'), @item, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }, class: "btn btn-warning rounded-md"

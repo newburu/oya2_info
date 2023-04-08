@@ -5,5 +5,8 @@
   .form-inputs
     = f.input :name
 
-  .form-actions
-    = f.button :submit
+  .form-actions.flex.flex-row.p-2
+    .p-1
+      = f.button :submit, class: "btn btn-primary rounded-md"
+    .p-1
+      = link_to t('btn.back'), @store, class: "btn btn-secondary rounded-md"

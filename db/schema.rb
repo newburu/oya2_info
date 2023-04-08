@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_134026) do
   create_table "brands", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "store_id", null: false
     t.string "name"
+    t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["store_id"], name: "index_brands_on_store_id"
@@ -69,6 +70,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_134026) do
 
   create_table "stores", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
+    t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

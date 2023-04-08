@@ -4,6 +4,7 @@
 
   .form-inputs.flex.flex-col
     = f.input :name, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
+    = f.file_field :images, multiple: true, class: "file-input file-input-bordered rounded-md max-w-xs"
 
   .form-actions.flex.flex-row.p-2
     .p-1

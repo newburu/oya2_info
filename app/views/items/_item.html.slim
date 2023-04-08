@@ -1,18 +1,15 @@
 div id="#{dom_id item}"
-  p
-    strong
-      = t('activerecord.attributes.item.product')
-    =< item.product_id
-  p
-    strong
-      = t('activerecord.attributes.item.name')
-    =< item.name
-  p
-    strong
-      = t('activerecord.attributes.item.release_at')
-    =< item.release_at
-  p
-    strong
-      = t('activerecord.attributes.item.images')
-    - item.images.each do |image|
-      =< image_tag image.thumb.url
+  .flex.flex-row.p-1
+    - if item.images[0].present?
+      = image_tag item.images[0].thumb.url, class: "rounded-lg thumb"
+    - else
+      = image_tag "default.png", class: "rounded-lg thumb"
+    .title.p-1.pl-2
+      .flex.flex-col
+        = link_to item.name, item, class: "link link-primary align-bottom"
+      .item-release_at
+        - if item.release_at.nil?
+          | 未発売
+        - else
+          = t('activerecord.attributes.item.release_at')
+          =<  item.release_at.to_s(:date)

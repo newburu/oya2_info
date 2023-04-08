@@ -2,8 +2,8 @@
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
-  .form-inputs
-    = f.input :name
+  .form-inputs.flex.flex-col
+    = f.input :name, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
 
   .form-actions.flex.flex-row.p-2
     .p-1

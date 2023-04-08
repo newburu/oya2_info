@@ -28,4 +28,7 @@
     .p-1
       = f.button :submit, class: "btn btn-primary rounded-md"
     .p-1
-      = link_to t('btn.back'), @report, class: "btn btn-secondary rounded-md"
+      - if @report.new_record?
+        = link_to t('btn.back'), @report.item, class: "btn btn-secondary rounded-md"
+      - else
+        = link_to t('btn.back'), @report, class: "btn btn-secondary rounded-md"

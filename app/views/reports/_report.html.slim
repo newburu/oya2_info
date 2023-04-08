@@ -30,6 +30,6 @@ div id="#{dom_id report}"
       .report-owner.text-xs
         = "投稿者：#{report.owner.name}さん"
       .report-bought_at.text-xs
-        = "購入日：#{report.bought_at.to_s(:date)}"
+        = "購入日：#{report.bought_at.try(:to_s, :date)}"
       .report-created.text-xs
         = "投稿日：#{report.created_at.to_s(:datetime)}"

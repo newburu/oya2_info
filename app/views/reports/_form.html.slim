@@ -15,7 +15,7 @@
           - 5.times do |idx|
             = radio_button_tag "report[report_assessments_attributes][#{report_assessment.options[:child_index]}][value]", idx+1, (idx+1 == report_assessment.object.value), {class: "mask mask-star-2 bg-orange-400"}
     = f.input :detail, input_html: {rows: 5, class: "textarea w-full textarea-bordered rounded-md min-h-full"}
-    = f.input :bought_at, as: :date, html5: true, input_html: {class: "select select-bordered rounded-md max-w-xs"}
+    = f.input :bought_at, as: :date, html5: true, input_html: {class: "select select-bordered rounded-md"}
     - @report.images.each_with_index do |image, idx|
       .flex.flex-row
         = hidden_field :report, :images, multiple: true, value: image.identifier
@@ -28,4 +28,7 @@
     .p-1
       = f.button :submit, class: "btn btn-primary rounded-md"
     .p-1
-      = link_to t('btn.back'), @report, class: "btn btn-secondary rounded-md"
+      - if @report.new_record?
+        = link_to t('btn.back'), @report.item, class: "btn btn-secondary rounded-md"
+      - else
+        = link_to t('btn.back'), @report, class: "btn btn-secondary rounded-md"

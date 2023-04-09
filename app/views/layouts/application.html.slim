@@ -12,7 +12,10 @@ html data-theme="cupcake"
     script src="https://kit.fontawesome.com/#{ENV["FONTAWESOME_ID"]}.js" crossorigin="anonymous"
     = render 'shared/adsense'
     = render 'shared/analytics'
-  body.container.mx-auto
+  body
     = render 'layouts/header'
-    = yield
+    main.container.mx-auto.px-4
+      .text-sm.breadcrumbs
+        = breadcrumbs class: nil, style: :ul
+      = yield
     = render 'layouts/footer'

@@ -12,18 +12,17 @@ div id="#{dom_id report}"
   .flex.flex-row.p-1
     .report_assessment.p-1.pl-2
       - report.report_assessments.each_with_index do |report_assessment, idx|
-        .columns-2.p-1
+        .p-1
           .flex-col
             = report_assessment.assessment.name
           .flex-col
             .rating
               - 5.times do |cnt|
                 = radio_button_tag "assessment[#{idx}]", cnt+1, (cnt+1 == report_assessment.value), {disabled: true, class: "mask mask-star-2 bg-orange-400"}
-    .image.p-1
-      .flex.flex-row
-        - report.images.each do |image|
-          .p-1
-            = image_tag image.thumb.url, class: "rounded-lg thumb"
+    .image.p-1.flex.flex-wrap
+      - report.images.each do |image|
+        .p-1
+          = image_tag image.thumb.url, class: "rounded-lg thumb-lg"
   .flex.flex-row.p-1.w-full
     = simple_format(report.detail)
   .fiel.flex-row.p-1
@@ -31,6 +30,6 @@ div id="#{dom_id report}"
       .report-owner.text-xs
         = "投稿者：#{report.owner.name}さん"
       .report-bought_at.text-xs
-        = "購入日：#{report.bought_at.to_s(:date)}"
+        = "購入日：#{report.bought_at.try(:to_s, :date)}"
       .report-created.text-xs
         = "投稿日：#{report.created_at.to_s(:datetime)}"

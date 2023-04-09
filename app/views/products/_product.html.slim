@@ -1,14 +1,9 @@
 div id="#{dom_id product}"
-  p
-    strong
-      = t('activerecord.attributes.product.brand')
-    =< product.brand_id
-  p
-    strong
-      = t('activerecord.attributes.product.name')
-    =< product.name
-  p
-    strong
-      = t('activerecord.attributes.product.images')
-    - product.images.each do |image|
-      =< image_tag image.thumb.url
+  .flex.flex-row.p-1
+    - if product.images[0].present?
+      = image_tag product.images[0].thumb.url, class: "rounded-lg thumb"
+    - else
+      = image_tag "default.png", class: "rounded-lg thumb"
+    .title.p-1.pl-2
+      .flex.flex-col
+        = link_to product.name, product, class: "link link-primary align-bottom"

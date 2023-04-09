@@ -1,5 +1,9 @@
 div id="#{dom_id store}"
-  p
-    strong
-      = t('activerecord.attributes.store.name')
-    =< store.name
+  .flex.flex-row.p-1
+    - if store.images[0].present?
+      = image_tag store.images[0].thumb.url, class: "rounded-lg thumb"
+    - else
+      = image_tag "default.png", class: "rounded-lg thumb"
+    .title.p-1.pl-2
+      .flex.flex-col
+        = link_to store.name, store, class: "link link-primary align-bottom"

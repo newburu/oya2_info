@@ -8,7 +8,7 @@ class ReportPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.present?
   end
 
   def new?

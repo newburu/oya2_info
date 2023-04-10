@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[ show edit update destroy ]
+  before_action :authorize_item, only: [:index, :new, :create]
+  after_action :verify_authorized
 
   # GET /items or /items.json
   def index
@@ -61,6 +63,12 @@ class ItemsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_item
       @item = Item.find(params[:id])
+      
+      authorize @item
+    end
+
+    def authorize_item
+      authorize Item
     end
 
     # Only allow a list of trusted parameters through.

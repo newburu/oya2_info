@@ -1,5 +1,7 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: %i[ show edit update destroy ]
+  before_action :authorize_report, only: [:index, :new, :create]
+  after_action :verify_authorized
 
   # GET /reports or /reports.json
   def index
@@ -65,6 +67,12 @@ class ReportsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_report
       @report = Report.find(params[:id])
+
+      authorize @report
+    end
+
+    def authorize_report
+      authorize Report
     end
 
     # Only allow a list of trusted parameters through.

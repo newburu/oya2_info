@@ -8,7 +8,7 @@ p style="color: green" = notice
 == render @report
 
 .flex.flex-row.p-2
-  - if @report.owner == current_user
+  - if policy(@report).edit?
     .p-1
       = link_to t('btn.edit'), edit_report_path(@report), class: "btn btn-primary rounded-md"
     .p-1

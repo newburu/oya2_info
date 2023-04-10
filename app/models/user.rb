@@ -7,6 +7,9 @@ class User < ApplicationRecord
          # Twitter API認証用に追加
          :omniauthable, omniauth_providers: [:twitter]
 
+  # ロール
+  enum role: { normal: 0, admin: 1 }
+
   def self.new_with_session(params, session)
     if session["devise.user_attributes"]
       new(session["devise.user_attributes"], without_protection: true) do |user|

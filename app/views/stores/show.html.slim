@@ -9,7 +9,8 @@ p style="color: green" = notice
 == render partial: 'shared/child_list', locals: { children: @store.brands }
 
 .flex.flex-row.p-2
-  .p-1
-    = link_to t('btn.edit'), edit_store_path(@store), class: "btn btn-primary rounded-md"
-  .p-1
-    = button_to t('btn.destroy'), @store, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }, class: "btn btn-warning rounded-md"
+  - if policy(@store).edit?
+    .p-1
+      = link_to t('btn.edit'), edit_store_path(@store), class: "btn btn-primary rounded-md"
+    .p-1
+      = button_to t('btn.destroy'), @store, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }, class: "btn btn-warning rounded-md"

@@ -103,6 +103,9 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem "omniauth-rails_csrf_protection"
 
+# 認可
+gem 'pundit'
+
 # 環境変数
 gem 'dotenv-rails'
 

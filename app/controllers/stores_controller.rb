@@ -1,5 +1,7 @@
 class StoresController < ApplicationController
   before_action :set_store, only: %i[ show edit update destroy ]
+  before_action :authorize_store, only: [:index, :new, :create]
+  after_action :verify_authorized
 
   # GET /stores or /stores.json
   def index
@@ -61,6 +63,12 @@ class StoresController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_store
       @store = Store.find(params[:id])
+
+      authorize @store
+    end
+
+    def authorize_store
+      authorize Store
     end
 
     # Only allow a list of trusted parameters through.

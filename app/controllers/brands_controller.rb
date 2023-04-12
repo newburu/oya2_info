@@ -1,5 +1,7 @@
 class BrandsController < ApplicationController
   before_action :set_brand, only: %i[ show edit update destroy ]
+  before_action :authorize_brand, only: [:index, :new, :create]
+  after_action :verify_authorized
 
   # GET /brands or /brands.json
   def index
@@ -61,6 +63,12 @@ class BrandsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_brand
       @brand = Brand.find(params[:id])
+
+      authorize @brand
+    end
+
+    def authorize_brand
+      authorize Brand
     end
 
     # Only allow a list of trusted parameters through.

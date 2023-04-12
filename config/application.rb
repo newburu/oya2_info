@@ -25,5 +25,8 @@ module Mogunavi
     config.i18n.default_locale = :ja
 
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+
+    # Pundit::NotAuthorizedError 例外を403HTTPステータスにします。
+    config.action_dispatch.rescue_responses["Pundit::NotAuthorizedError"] = :forbidden
   end
 end

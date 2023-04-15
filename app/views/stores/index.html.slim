@@ -6,4 +6,7 @@ h1 = t('.title')
 
 == render partial: 'shared/child_list', locals: { children: @stores }
 
-= link_to t('.btn.new'), new_store_path
+.flex.flex-row.p-2
+  - if policy(Store).edit?
+    .p-1
+      = link_to t('.btn.new'), new_store_path, class: "btn btn-primary rounded-md"

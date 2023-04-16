@@ -1,5 +1,6 @@
 - set_meta_tags title: "#{@report.title_tag}", og: {title: "#{Settings.system[:title]}：「#{@report.title_tag}」"}
 - set_meta_tags og: {image: image_url(@report.images[0])} if @report.images.present?
+- set_meta_tags og: {description: "#{Settings.system[:description]}「#{@report.item.name}」のクチコミ！「#{@report.title}」#{@report.detail}"}
 
 - breadcrumb :report, @report
 

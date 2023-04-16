@@ -3,4 +3,6 @@ class Item < ApplicationRecord
   has_many :reports
   mount_uploaders :images, ImageUploader
   serialize :images
+
+  validates :name, presence: true
 end

@@ -3,4 +3,6 @@ class Brand < ApplicationRecord
   has_many :products
   mount_uploaders :images, ImageUploader
   serialize :images
+
+  validates :name, presence: true
 end

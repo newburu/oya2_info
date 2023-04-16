@@ -5,7 +5,7 @@ system:
   trello_url: 
   google_form_url: 
   official_twitter_id: 'newburu'
-  description: 'みんなの今日のおやつを投稿しよう！'
+  description: 'みんなで今日のおやつを投稿しよう！'
   description_smartphone: '今日のおやつ！！'
   hashtag: '今日のおやつ'
   keywords: ['Twitter', 'おやつ', '今日のおやつ']

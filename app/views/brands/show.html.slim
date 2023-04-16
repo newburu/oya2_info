@@ -15,4 +15,4 @@ p style="color: green" = notice
     .p-1
       = button_to t('btn.destroy'), @brand, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }, class: "btn btn-warning rounded-md"
     .p-1
-      = link_to t('.btn.new-product'), new_product_path(brand: @brand), class: "btn btn-warning rounded-md"
+      = link_to t('.btn.new-product'), new_product_path(brand: @brand), class: "btn btn-primary rounded-md"

@@ -32,4 +32,9 @@ module ApplicationHelper
   def login?
     current_user.present?
   end
+
+  def oyatsu_mark
+    %w[🍠 🥞 🍡 🍦 🍧 🍨 🍩 🍪 🎂 🍰 🍫 🍬 🍭 🍮].sample 
+  end
+
 end

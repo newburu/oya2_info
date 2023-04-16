@@ -17,33 +17,56 @@ ja:
         new: メーカーを追加する
         show: このメーカーを見る
     show:
+      title: メーカー
       btn:
         edit: このメーカーを編集する
         destroy: このメーカーを削除する
         new-brand: このメーカーのブランドを追加する
+    edit:
+      title: メーカーを修正
   brands:
+    index:
+      title: ブランド
     show:
+      title: ブランド
       btn:
         edit: このブランドを編集する
         destroy: このブランドを削除する
         new-product: このブランドのプロダクトを追加する
+    edit:
+      title: ブランドを修正
   products:
+    index:
+      title: プロダクト
     show:
+      title: プロダクト
       btn:
         edit: このプロダクトを編集する
         destroy: このプロダクトを削除する
         new-item: このブランドの商品を追加する
+    edit:
+      title: プロダクトを修正
   items:
+    index:
+      title: 商品
     show:
+      title: 商品
       btn:
         edit: この商品を編集する
         destroy: この商品を削除する
         new-report: この商品のクチコミを追加する
+    edit:
+      title: 商品を修正
   reports:
+    index:
+      title: クチコミ
     show:
+      title: クチコミ
       btn:
         edit: このクチコミを編集する
         destroy: このクチコミを削除する
+    edit:
+      title: クチコミを修正
     form:
       btn:
         destroy: 削除

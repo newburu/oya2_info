@@ -33,6 +33,36 @@ h1:before {
     /*アイコン色*/
 }
 
+h2 {
+    position: relative;
+    /*相対位置*/
+    line-height: 1.4;
+    /*行高*/
+    display: inline-block;
+}
+
+h2:before,
+h2:after {
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    display: inline-block;
+    font-size: 1.0em;
+    color: #ff6a6a;
+}
+
+h2:before {
+    content: "\f053";
+    /*アイコン種類*/
+    padding-right: 0.5em
+}
+
+h2:after {
+    content: "\f054";
+    /*アイコン種類*/
+    padding-left: 0.5em
+}
+
 abbr {
     color: red;
 }

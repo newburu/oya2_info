@@ -33,6 +33,10 @@ h1:before {
     /*アイコン色*/
 }
 
+abbr {
+    color: red;
+}
+
 .input {
     height: auto;
 }

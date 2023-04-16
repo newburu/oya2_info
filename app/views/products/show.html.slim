@@ -15,3 +15,5 @@ p style="color: green" = notice
       = link_to t('btn.edit'), edit_product_path(@product), class: "btn btn-primary rounded-md"
     .p-1
       = button_to t('btn.destroy'), @product, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }, class: "btn btn-warning rounded-md"
+    .p-1
+      = link_to t('.btn.new-item'), new_item_path(product: @product), class: "btn btn-primary rounded-md"

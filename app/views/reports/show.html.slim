@@ -16,8 +16,11 @@ p style="color: green" = notice
       = link_to t('btn.edit'), edit_report_path(@report), class: "btn btn-primary rounded-md"
     .p-1
       = button_to t('btn.destroy'), @report, method: :delete, form: { data: { turbo_confirm: t('confirm.destroy') } }, class: "btn btn-warning rounded-md"
-    .p-1
-      =< link_to_twitter(report_url(@report), "クチコミを投稿したよ！", Settings.system[:hashtag])
-      =< link_to_line(report_url(@report), "クチコミを投稿したよ！", Settings.system[:hashtag])
-      =< link_to_facebook(report_url(@report), "クチコミを投稿したよ！", Settings.system[:hashtag])
-      =< link_to_mail(report_url(@report), "クチコミを投稿したよ！", "クチコミを投稿したよ！", Settings.system[:hashtag])
+  - msg = "クチコミをご紹介！"
+  - if policy(@report).edit?
+    - msg = "クチコミを投稿したよ！"
+  .p-1
+    =< link_to_twitter(report_url(@report), msg, Settings.system[:hashtag])
+    =< link_to_line(report_url(@report), msg, Settings.system[:hashtag])
+    =< link_to_facebook(report_url(@report), msg, Settings.system[:hashtag])
+    =< link_to_mail(report_url(@report), msg, msg, Settings.system[:hashtag])

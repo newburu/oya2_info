@@ -16,6 +16,8 @@ ja:
       btn:
         new: メーカーを追加する
         show: このメーカーを見る
+    new:
+      title: メーカーを追加
     show:
       title: メーカー
       btn:
@@ -27,6 +29,8 @@ ja:
   brands:
     index:
       title: ブランド
+    new:
+      title: ブランドを追加
     show:
       title: ブランド
       btn:
@@ -38,6 +42,8 @@ ja:
   products:
     index:
       title: プロダクト
+    new:
+      title: プロダクトを追加
     show:
       title: プロダクト
       btn:
@@ -49,6 +55,8 @@ ja:
   items:
     index:
       title: 商品
+    new:
+      title: 商品を追加
     show:
       title: 商品
       btn:
@@ -60,6 +68,8 @@ ja:
   reports:
     index:
       title: クチコミ
+    new:
+      title: クチコミを投稿
     show:
       title: クチコミ
       btn:

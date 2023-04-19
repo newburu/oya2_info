@@ -16,7 +16,7 @@ h1 {
 }
 
 h1:before {
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 6 Free";
     /*忘れずに*/
     content: "\f138";
     /*アイコンのユニコード*/
@@ -44,7 +44,7 @@ h2 {
 h2:before,
 h2:after {
     position: relative;
-    font-family: "Font Awesome 5 Free";
+    font-family: "Font Awesome 6 Free";
     font-weight: 900;
     display: inline-block;
     font-size: 1.0em;

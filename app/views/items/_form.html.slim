@@ -4,9 +4,10 @@
 
   .form-inputs.flex.flex-col
     = f.association :product, as: :hidden
-    = f.input :name, input_html: {class: "input w-full input-bordered rounded-md max-w-x"}
-    = f.input :release_at, as: :date, html5: true, input_html: {class: "select select-bordered rounded-md"}
-    = f.file_field :images, multiple: true, class: "file-input file-input-bordered rounded-md max-w-xs"
+    = f.input :name, input_html: {class: "input w-full input-bordered rounded-md"}
+    = f.input :release_at, as: :date, html5: true, input_html: {class: "select select-bordered w-full rounded-md"}
+    .p-2
+      = f.file_field :images, multiple: true, class: "file-input file-input-bordered w-full rounded-md"
 
   .form-actions.flex.flex-row.p-2
     .p-1

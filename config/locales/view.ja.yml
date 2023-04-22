@@ -23,7 +23,7 @@ ja:
       btn:
         edit: このメーカーを編集する
         destroy: このメーカーを削除する
-        new-brand: このメーカーのブランドを追加する
+        new-brand: ブランドを追加する
     edit:
       title: メーカーを修正
   brands:
@@ -36,7 +36,7 @@ ja:
       btn:
         edit: このブランドを編集する
         destroy: このブランドを削除する
-        new-product: このブランドのプロダクトを追加する
+        new-product: プロダクトを追加する
     edit:
       title: ブランドを修正
   products:
@@ -49,7 +49,7 @@ ja:
       btn:
         edit: このプロダクトを編集する
         destroy: このプロダクトを削除する
-        new-item: このブランドの商品を追加する
+        new-item: 商品を追加する
     edit:
       title: プロダクトを修正
   items:
@@ -62,7 +62,7 @@ ja:
       btn:
         edit: この商品を編集する
         destroy: この商品を削除する
-        new-report: この商品のクチコミを追加する
+        new-report: クチコミを追加する
     edit:
       title: 商品を修正
   reports:

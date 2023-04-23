@@ -63,6 +63,14 @@ h2:after {
     padding-left: 0.5em
 }
 
+hr {
+    border-width: 3px 0 0 0;
+    border-style: dashed;
+    border-color: #ff6a6a;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
 abbr {
     color: red;
 }

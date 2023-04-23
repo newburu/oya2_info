@@ -5,7 +5,9 @@
     h1.text-lg.font-extrabold
       | 新着クチコミ
     ul
-      - @new_reports.each do |report|
+      - @new_reports.each_with_index do |report, idx|
+        - if idx != 0
+          hr
         li.p-2
           .flex.flex-row.p-1
           .flex.flex-row.p-1

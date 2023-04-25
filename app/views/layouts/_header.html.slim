@@ -27,8 +27,9 @@ header
               = link_to t('menu.static_pages.terms'), static_pages_terms_path, class: "link link-hover"
         - if login?
           li tabindex="0"
-            = link_to "#{current_user.display_name}さん", '#', class: "link link-hover"
-            ul.p-2.bg-base-100
+            = link_to '#', class: "link link-hover py-0"
+              = image_tag current_user.image || "default.png", title: "#{current_user.display_name}さん", class: "rounded-full w-10"
+            ul.p-2.bg-base-100.right-0
               li
                 = link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, class: "link link-hover"
         - else

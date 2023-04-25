@@ -2,7 +2,7 @@ h1
   | プライバシーポリシー
 
 | にゅ～ぶる(
-= link_to '@newburu', 'https://twitter.com/newburu', {target: '_blank'}
+= link_to '@newburu', 'https://twitter.com/newburu', {target: '_blank', class: "link link-hover"}
 | )（以下，「当社」といいます。）がこのウェブサイト上で提供するサービス（以下，「本サービス」といいます。）におけるプライバシー情報の取扱いについて，以下のとおりプライバシーポリシー（以下，「本ポリシー」といいます。）を定めます。
 br
 br
@@ -83,12 +83,12 @@ h2
   | 第8条（個人情報に関するお問い合わせ、開示等の請求に関する窓口）
 br
 - if Settings.system[:official_twitter_id].present?
-  = link_to '公式Twitter', Settings.system[:twitter][:url] + Settings.system[:official_twitter_id],  {target: '_blank'}
+  = link_to '公式Twitter', Settings.system[:twitter][:url] + Settings.system[:official_twitter_id],  {target: '_blank', class: "link link-hover"}
 - else
   | 公式Twitter
 |  、もしくは 
 - if Settings.system[:google_form_url].present?
-  = link_to 'お問合わせフォーム', Settings.system[:google_form_url],  {target: '_blank'}
+  = link_to 'お問合わせフォーム', Settings.system[:google_form_url],  {target: '_blank', class: "link link-hover"}
 - else
   | お問合わせフォーム
 |  よりご連絡ください。

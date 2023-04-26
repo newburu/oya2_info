@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_09_145542) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_26_131616) do
   create_table "assessments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
   end
 
   create_table "brands", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -23,6 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_145542) do
     t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["store_id"], name: "index_brands_on_store_id"
   end
 
@@ -33,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_145542) do
     t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["product_id"], name: "index_items_on_product_id"
   end
 
@@ -42,6 +45,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_145542) do
     t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["brand_id"], name: "index_products_on_brand_id"
   end
 
@@ -51,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_145542) do
     t.integer "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["assessment_id"], name: "index_report_assessments_on_assessment_id"
     t.index ["report_id"], name: "index_report_assessments_on_report_id"
   end
@@ -64,6 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_145542) do
     t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["item_id"], name: "index_reports_on_item_id"
     t.index ["owner_id"], name: "index_reports_on_owner_id"
   end
@@ -73,6 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_09_145542) do
     t.json "images"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

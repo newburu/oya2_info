@@ -123,3 +123,6 @@ group :development do
   gem 'bcrypt_pbkdf'
   gem 'sshkit-sudo'
 end
+
+# 論理削除
+gem 'paranoia'

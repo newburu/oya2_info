@@ -2,7 +2,7 @@ module SnslinkHelper
 
   # Twitter投稿リンク
   def link_to_twitter(url, msg, hashtags)
-    link_to Settings.system[:twitter][:share_url] + "?url=#{url}&text=#{msg}&hashtags=#{hashtags}", class: "", style: "font-size: 2rem;color:#1DA1F2;", target: "_blank", rel: "noopener" do
+    link_to Settings.system[:twitter][:tweet_url] + "?url=#{url}&text=#{msg}&hashtags=#{hashtags}", class: "", style: "font-size: 2rem;color:#1DA1F2;", target: "_blank", rel: "noopener" do
       "<i class='fa-brands fa-square-twitter'></i>".html_safe
     end
   end

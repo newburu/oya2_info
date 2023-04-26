@@ -5,5 +5,7 @@ p style="color: green" = notice
 h1 = t('.title')
 
 #reports
-  - @reports.each do |report|
+  - @reports.each_with_index do |report, idx|
+    - if idx != 0
+      hr
     == render report

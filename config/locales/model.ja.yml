@@ -44,3 +44,39 @@ ja:
   attributes:
     created_at: 作成日
     updated_at: 更新日
+
+  items:
+    create:
+      notice: "商品の登録に成功しました。"
+    update:
+      notice: "商品の更新に成功しました。"
+    destroy:
+      notice: "商品の削除に成功しました。"
+  brands:
+    create:
+      notice: "ブランドの登録に成功しました。"
+    update:
+      notice: "ブランドの更新に成功しました。"
+    destroy:
+      notice: "ブランドの削除に成功しました。"
+  products:
+    create:
+      notice: "プロダクトの登録に成功しました。"
+    update:
+      notice: "プロダクトの更新に成功しました。"
+    destroy:
+      notice: "プロダクトの削除に成功しました。"
+  reports:
+    create:
+      notice: "クチコミの登録に成功しました。"
+    update:
+      notice: "クチコミの更新に成功しました。"
+    destroy:
+      notice: "クチコミの削除に成功しました。"
+  stores:
+    create:
+      notice: "メーカーの登録に成功しました。"
+    update:
+      notice: "メーカーの更新に成功しました。"
+    destroy:
+      notice: "メーカーの削除に成功しました。"

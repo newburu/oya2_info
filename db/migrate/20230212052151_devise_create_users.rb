@@ -40,6 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[7.0]
       t.string :password
       t.string :access_token
       t.string :access_token_secret
+      t.string :image
 
       t.timestamps null: false
     end

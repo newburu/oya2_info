@@ -35,3 +35,31 @@
                 = "投稿者：#{report.owner.name}さん"
               .report-created.text-xs	
                 = "投稿日：#{report.created_at.to_s(:datetime)}"
+
+- if @new_items.present?
+  .new-items
+    h1.text-lg.font-extrabold
+      | 新着商品
+    ul
+      - @new_items.each_with_index do |item, idx|
+        - if idx != 0
+          hr
+        li.p-2
+          .flex.flex-row.p-1
+          .flex.flex-row.p-1
+            .indicator
+              span.indicator-item
+                = image_tag "icon/new.gif" if item.new?
+              - if item.images[0].present?
+                = image_tag item.images[0].thumb.url, class: "rounded-lg", size: '64x64'
+              - else
+                = image_tag "default.png", class: "rounded-lg", size: '64x64'
+            .title.p-1.pl-2
+              .flex.flex-col
+                = link_to item.name, item, class: "link link-primary align-bottom"
+              .flex.flex-row.p-1
+                = link_to item.product.brand.store.name, item.product.brand.store, class: "link link-secondary align-bottom"
+          .fiel.flex-row.p-1
+            .flex.flex-col
+              .item-created.text-xs	
+                = "発売日：#{item.release_at.to_s(:date)}"

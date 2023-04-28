@@ -63,3 +63,27 @@
             .flex.flex-col
               .item-created.text-xs	
                 = "発売日：#{item.release_at.to_s(:date)}"
+
+- if @new_news.present?
+  .new-news
+    h1.text-lg.font-extrabold
+      | 新着ニュース
+    ul
+      - @new_news.each_with_index do |news, idx|
+        - if idx != 0
+          hr
+        li.p-2
+          .flex.flex-row.p-1
+          .flex.flex-row.p-1
+            .indicator
+              span.indicator-news
+                = image_tag "icon/new.gif" if news.new?
+            .title.p-1.pl-2
+              .flex.flex-col
+                = news.title
+              .flex.flex-row.p-1
+                = news.message
+          .fiel.flex-row.p-1
+            .flex.flex-col
+              .news-created.text-xs	
+                = "登録日：#{news.created_at.to_s(:date)}"

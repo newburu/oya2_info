@@ -11,10 +11,18 @@ Rails.application.routes.draw do
     resources :images, :only => [:create, :destroy] # support #create and #destroy
   end
   resources :assessments
-  resources :items
-  resources :products
-  resources :brands
-  resources :stores
+  resources :items do
+    resources :images, :only => [:create, :destroy] # support #create and #destroy
+  end
+  resources :products do
+    resources :images, :only => [:create, :destroy] # support #create and #destroy
+  end
+  resources :brands do
+    resources :images, :only => [:create, :destroy] # support #create and #destroy
+  end
+  resources :stores do
+    resources :images, :only => [:create, :destroy] # support #create and #destroy
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # 静的ページ

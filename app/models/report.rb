@@ -30,4 +30,10 @@ class Report < ApplicationRecord
     (created_at + NEW_INTERVAL_DAY) > DateTime.now
   end
 
+  def random_image
+    return images.sample if images.present?
+
+    nil
+  end
+
 end

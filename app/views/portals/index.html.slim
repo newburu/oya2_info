@@ -14,8 +14,9 @@
             .indicator
               span.indicator-item
                 = image_tag "icon/new.gif" if report.new?
-              - if report.images[0].present?
-                = image_tag report.images[0].thumb.url, class: "rounded-lg", size: '64x64'
+              - image = report.random_image
+              - if image.present?
+                = image_tag image.thumb.url, class: "rounded-lg", size: '64x64'
               - else
                 = image_tag "default.png", class: "rounded-lg", size: '64x64'
             .title.p-1.pl-2
@@ -50,8 +51,9 @@
             .indicator
               span.indicator-item
                 = image_tag "icon/new.gif" if item.new?
-              - if item.images[0].present?
-                = image_tag item.images[0].thumb.url, class: "rounded-lg", size: '64x64'
+              - image = item.random_image
+              - if image.present?
+                = image_tag image.thumb.url, class: "rounded-lg", size: '64x64'
               - else
                 = image_tag "default.png", class: "rounded-lg", size: '64x64'
             .title.p-1.pl-2

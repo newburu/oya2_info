@@ -13,6 +13,8 @@ class Store < ApplicationRecord
       image = brand.random_image
       return image if image.present?
     end
+
+    nil
   end
 
 end

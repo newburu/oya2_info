@@ -14,6 +14,8 @@ class Product < ApplicationRecord
       image = item.random_image
       return image if image.present?
     end
+
+    nil
   end
 
 end

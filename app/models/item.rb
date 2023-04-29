@@ -18,6 +18,8 @@ class Item < ApplicationRecord
 
   def random_image
     images.sample if images.present?
+
+    nil
   end
 
 end

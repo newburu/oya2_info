@@ -7,4 +7,13 @@ class Brand < ApplicationRecord
   acts_as_paranoid
 
   validates :name, presence: true
+
+  def random_image
+    return images.sample if images.present?
+    self.products.each do |product|
+      image = product.random_image
+      return image if image.present?
+    end
+  end
+
 end

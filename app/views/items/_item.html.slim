@@ -1,7 +1,8 @@
 div id="#{dom_id item}"
   .flex.flex-row.p-1
-    - if item.images[0].present?
-      = image_tag item.images[0].thumb.url, class: "rounded-lg thumb"
+    - image = item.random_image
+    - if image.present?
+      = image_tag image.thumb.url, class: "rounded-lg thumb"
     - else
       = image_tag "default.png", class: "rounded-lg thumb"
     .title.p-1.pl-2

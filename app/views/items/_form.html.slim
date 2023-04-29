@@ -6,6 +6,12 @@
     = f.association :product, as: :hidden
     = f.input :name, input_html: {class: "input w-full input-bordered rounded-md"}
     = f.input :release_at, as: :date, html5: true, input_html: {class: "select select-bordered w-full rounded-md"}
+    - @item.images.each_with_index do |image, idx|
+      .flex.flex-row.p-2
+        = hidden_field :item, :images, multiple: true, value: image.identifier
+        = image_tag image.thumb.url, class: "rounded-lg thumb"
+        .p-2.w-4.h-4
+          = link_to t('btn.destroy'), item_image_path(@item, idx), data: { turbo_method: :delete, turbo_confirm: t('confirm.destroy') }, class: "btn btn-warning rounded-md"
     .p-2
       = f.file_field :images, multiple: true, class: "file-input file-input-bordered w-full rounded-md"
 

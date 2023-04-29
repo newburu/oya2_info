@@ -15,4 +15,11 @@ class Item < ApplicationRecord
   def new?
     (created_at + NEW_INTERVAL_DAY) > DateTime.now
   end
+
+  def random_image
+    images.sample if images.present?
+
+    nil
+  end
+
 end

@@ -4,8 +4,9 @@
       - children.each do |child|
         = link_to child, class: "group"
           .aspect-w-1.aspect-h-1.w-full.overflow-hidden.rounded-lg.bg-gray-200.xl:aspect-w-7.xl:aspect-h-8
-            - if child.try(:images).present?
-              = image_tag child.images[0].thumb.url, {alt: child.name, class: "h-full w-full object-cover object-center group-hover:opacity-75"}
+            - image = child.random_image
+            - if image.present?
+              = image_tag image.thumb.url, {alt: child.name, class: "h-full w-full object-cover object-center group-hover:opacity-75"}
             - else
               = image_tag "default.png"
           h3.mt-4.text-sm.text-gray-700

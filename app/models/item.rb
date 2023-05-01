@@ -17,7 +17,7 @@ class Item < ApplicationRecord
   end
 
   def random_image
-    images.sample if images.present?
+    return images.sample if images.present?
 
     nil
   end

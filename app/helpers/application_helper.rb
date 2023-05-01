@@ -10,8 +10,8 @@ module ApplicationHelper
       canonical: request.original_url,
       separator: '|',
       icon: [
-        { href: image_path('favicon.ico') },
-        { href: image_path('logo.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
+        { href: image_url('favicon.ico') },
+        { href: image_url('logo.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
         site_name: Settings.system[:title],
@@ -19,7 +19,7 @@ module ApplicationHelper
         description: Settings.system[:description],
         type: 'website',
         url: request.original_url,
-        image: image_path('eyecatch.png'),
+        image: image_url('eyecatch.png'),
         locale: 'ja_JP',
       },
       twitter: {

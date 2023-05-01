@@ -14,7 +14,7 @@ class BrandsController < ApplicationController
 
   # GET /brands/new
   def new
-    @brand = Brand.new
+    @brand = Brand.new(store_id: params[:store])
   end
 
   # GET /brands/1/edit

@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
 
   # GET /items/new
   def new
-    @item = Item.new
+    @item = Item.new(product_id: params[:product])
   end
 
   # GET /items/1/edit

@@ -8,7 +8,7 @@
     - @brand.images.each_with_index do |image, idx|
       .flex.flex-row.p-2
         = hidden_field :brand, :images, multiple: true, value: image.identifier
-        = image_tag image.thumb.url, class: "rounded-lg thumb"
+        = image_tag image.url, class: "rounded-lg thumb"
         .p-2.w-4.h-4
           = link_to t('btn.destroy'), brand_image_path(@brand, idx), data: { turbo_method: :delete, turbo_confirm: t('confirm.destroy') }, class: "btn btn-warning rounded-md"
     .p-2

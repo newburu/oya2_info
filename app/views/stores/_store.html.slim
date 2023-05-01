@@ -2,7 +2,7 @@ div id="#{dom_id store}"
   .flex.flex-row.p-1
     - image = store.random_image
     - if image.present?
-      = image_tag image.thumb.url, class: "rounded-lg thumb"
+      = image_tag image.url, class: "rounded-lg thumb"
     - else
       = image_tag "default.png", class: "rounded-lg thumb"
     .title.p-1.pl-2

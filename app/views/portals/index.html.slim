@@ -16,7 +16,8 @@
                 = image_tag "icon/new.gif" if report.new?
               - image = report.random_image
               - if image.present?
-                = image_tag image.url, class: "rounded-lg", size: '64x64'
+                = link_to image.url, data: {lightbox: image.url, title: report.title}
+                  = image_tag image.url, class: "rounded-lg", size: '64x64'
               - else
                 = image_tag "default.png", class: "rounded-lg", size: '64x64'
             .title.p-1.pl-2
@@ -53,7 +54,8 @@
                 = image_tag "icon/new.gif" if item.new?
               - image = item.random_image
               - if image.present?
-                = image_tag image.url, class: "rounded-lg", size: '64x64'
+                = link_to image.url, data: {lightbox: image.url, title: item.name}
+                  = image_tag image.url, class: "rounded-lg", size: '64x64'
               - else
                 = image_tag "default.png", class: "rounded-lg", size: '64x64'
             .title.p-1.pl-2

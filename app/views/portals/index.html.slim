@@ -28,7 +28,7 @@
                   - if report.report_assessments[0].present?
                     .rating
                       - 5.times do |idx|
-                        = radio_button_tag :rating, idx, (idx+1 == report.report_assessments[0].value), {disabled: true, class: "mask mask-star-2 bg-orange-400"}
+                        = radio_button_tag :rating, idx, (idx+1 == report.report_assessments[0].value), {disabled: true, class: "mask mask-star-2 bg-orange-400", name: "rating_#{report.id}"}
           .flex.flex-row.p-1
             = simple_format(report.detail)
           .fiel.flex-row.p-1

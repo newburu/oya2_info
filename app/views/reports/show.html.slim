@@ -19,6 +19,7 @@ p style="color: green" = notice
   - msg = "クチコミをご紹介！"
   - if policy(@report).edit?
     - msg = "クチコミを投稿したよ！"
+  - msg = msg + "%0a%0a「#{@report.title}」%0a%0a"
   .p-1
     =< link_to_twitter(report_url(@report), msg, Settings.system[:hashtag])
     =< link_to_line(report_url(@report), msg, Settings.system[:hashtag])

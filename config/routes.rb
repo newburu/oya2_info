@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get 'static_pages/info'
   get 'static_pages/terms'
   get 'static_pages/privacy'
+  get 'static_pages/faq'
 
   # Defines the root path route ("/")
   root 'portals#index'

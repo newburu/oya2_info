@@ -18,7 +18,16 @@ header
               = link_to t('menu.item'), items_path, class: "link link-hover"
             li
               = link_to t('menu.report'), reports_path, class: "link link-hover"
-        li tabindex="0"
+        .sm:hidden.lg:flex
+          li
+            = link_to t('menu.static_pages.info'), static_pages_info_path, class: "link link-hover"
+          li
+            = link_to t('menu.static_pages.privacy'), static_pages_privacy_path, class: "link link-hover"
+          li
+            = link_to t('menu.static_pages.terms'), static_pages_terms_path, class: "link link-hover"
+          li
+            = link_to t('menu.static_pages.faq'), static_pages_faq_path, class: "link link-hover"
+        li.md:flex.lg:hidden tabindex="0"
           = link_to t('menu.static_pages.info'), static_pages_info_path, class: "link link-hover"
           ul.p-2.bg-base-100
             li

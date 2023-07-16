@@ -3,4 +3,6 @@ class ReportAssessment < ApplicationRecord
   belongs_to :assessment
 
   acts_as_paranoid
+  
+  include UserstampsConcern
 end

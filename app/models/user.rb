@@ -10,6 +10,8 @@ class User < ApplicationRecord
   # ロール
   enum role: { normal: 0, admin: 1 }
 
+  cattr_accessor :current_user
+
   def self.new_with_session(params, session)
     if session["devise.user_attributes"]
       new(session["devise.user_attributes"], without_protection: true) do |user|

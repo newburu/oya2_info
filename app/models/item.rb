@@ -6,6 +6,8 @@ class Item < ApplicationRecord
 
   acts_as_paranoid
 
+  include UserstampsConcern
+
   validates :name, presence: true
 
   # NEW表示しておく日数

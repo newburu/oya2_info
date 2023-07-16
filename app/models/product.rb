@@ -5,6 +5,8 @@ class Product < ApplicationRecord
   serialize :images
 
   acts_as_paranoid
+  
+  include UserstampsConcern
 
   validates :name, presence: true
 

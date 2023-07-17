@@ -8,7 +8,7 @@ class StorePolicy < ApplicationPolicy
   end
 
   def create?
-    user.try(:admin?)
+    user.present?
   end
 
   def new?
@@ -16,7 +16,7 @@ class StorePolicy < ApplicationPolicy
   end
 
   def update?
-    user.try(:admin?)
+    record.owner == user || user.try(:admin?)
   end
 
   def edit?
@@ -24,13 +24,16 @@ class StorePolicy < ApplicationPolicy
   end
 
   def destroy?
-    user.try(:admin?)
+    update?
   end
 
   class Scope < Scope
-    # NOTE: Be explicit about which records you allow access to!
-    # def resolve
-    #   scope.all
-    # end
+    def resolve
+      if user.admin?
+        scope.all
+      else
+        scope.where(user_id: user.id)
+      end
+    end
   end
 end

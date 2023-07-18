@@ -4,7 +4,7 @@ class Brand < ApplicationRecord
   mount_uploaders :images, ImageUploader
   serialize :images
 
-  belongs_to :owner, class_name: 'User', foreign_key: :created_by_id
+  belongs_to :owner, class_name: 'User', foreign_key: :created_by_id, optional: true
 
   acts_as_paranoid
 

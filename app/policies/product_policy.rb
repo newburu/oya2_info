@@ -8,7 +8,7 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.present?
   end
 
   def new?
@@ -16,7 +16,7 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def update?
-    user.try(:admin?)
+    record.owner == user || user.try(:admin?)
   end
 
   def edit?

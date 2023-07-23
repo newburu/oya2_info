@@ -10,6 +10,8 @@ class Report < ApplicationRecord
 
   acts_as_paranoid
 
+  include UserstampsConcern
+
   validates :title, presence: true
 
   # child_listで利用するためにAlias

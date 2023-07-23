@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
 
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+  before_action :set_current_user
+
+  def set_current_user
+    User.current_user = current_user if current_user
+  end
+
   private
 
   def user_not_authorized

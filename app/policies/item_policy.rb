@@ -16,6 +16,7 @@ class ItemPolicy < ApplicationPolicy
   end
 
   def update?
+    return false if user.nil?
     record.owner == user || user.try(:admin?)
   end
 
